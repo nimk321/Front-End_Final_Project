@@ -15,21 +15,21 @@
                 <li>
                     <a href="#">Shop</a>
                     <ul class="dropdown">
-                        <li><a href="#">Laptops</a></li>
-                        <li><a href="#">Smartphones</a></li>
-                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#" onclick="addToCart('Laptop')">Laptop</a></li>
+                        <li><a href="#" onclick="addToCart('Smartphone')">Smartphone</a></li>
+                        <li><a href="#" onclick="addToCart('Accessory')">Accessory</a></li>
                     </ul>
                 </li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Checkout</a></li>
+                <li><a href="#" onclick="showCart()">Cart</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="checkout-section">
+    <section class="checkout-section" style="display:none;">
         <h2>Checkout</h2>
-        <form action="#" method="post">
+        <form action="checkout.php" method="post" id="checkout-form">
             <label for="shipping-info">Shipping Information:</label>
             <input type="text" id="shipping-info" name="shipping-info" placeholder="Enter your shipping address" required>
             
@@ -47,8 +47,18 @@
         </form>
     </section>
 
+    <section class="cart-section" style="display:none;">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+            <!-- Cart items will be added dynamically using JavaScript -->
+        </ul>
+        <button onclick="checkout()">Checkout</button>
+    </section>
+
     <footer>
         <p>&copy; 2024 QWERT Tech. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
