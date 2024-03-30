@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QWERTY Store</title>
+    <title>QWERT Tech</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to QWERTY Store</h1>
-        <nav>                  
+        <h1>Welcome to QWERT Tech</h1>
+        <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li>
@@ -22,17 +22,33 @@
                 </li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Checkout</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="featured-products">
-        <h2>Featured Products</h2>
-        <!-- Featured products content will go here -->
+    <section class="checkout-section">
+        <h2>Checkout</h2>
+        <form action="#" method="post">
+            <label for="shipping-info">Shipping Information:</label>
+            <input type="text" id="shipping-info" name="shipping-info" placeholder="Enter your shipping address" required>
+            
+            <label for="billing-info">Billing Information:</label>
+            <input type="text" id="billing-info" name="billing-info" placeholder="Enter your billing address" required>
+            
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="">Select Payment Method</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+            </select>
+            
+            <button type="submit">Proceed to Payment</button>
+        </form>
     </section>
 
     <footer>
-        <p>&copy; 2024 QWERTY Store. All rights reserved.</p>
+        <p>&copy; 2024 QWERT Tech. All rights reserved.</p>
     </footer>
 </body>
 </html>
