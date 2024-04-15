@@ -1,1 +1,1 @@
-Our project is going to be a tech store with QWERTY which is our group name as our store name, QWERTY Tech. Lets add Branding, alot of items, couple of forms, slick navigation bar, high resolution pictures, header, footer, checkout, refund page, etc. We can just keep piling things as we go on.
+
