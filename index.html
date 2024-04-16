@@ -1,147 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QWERT Tech</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="placeholder_logo.png" alt="QWERT Tech Logo">
-        </div>
-        <h1>Welcome to QWERT Tech</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li>
-                    <a href="#">Shop</a>
-                    <ul class="dropdown">
-                        <li><a href="#" onclick="addToCart('Laptop')">Laptop</a></li>
-                        <li><a href="#" onclick="addToCart('Smartphone')">Smartphone</a></li>
-                        <li><a href="#" onclick="addToCart('Accessory')">Accessory</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#" onclick="showCart()">Cart</a></li>
-            </ul>
-        </nav>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relief Connect</title>
 
-    <section class="featured-items">
-        <h2>Featured Items</h2>
-        <!-- Placeholder content and images -->
-        <div class="item">
-            <img src="placeholder_image1.jpg" alt="Featured Item 1">
-            <h3>Featured Item 1</h3>
-            <p>$99.99</p>
-        </div>
-        <div class="item">
-            <img src="placeholder_image2.jpg" alt="Featured Item 2">
-            <h3>Featured Item 2</h3>
-            <p>$159.99</p>
-        </div>
-    </section>
+    <link
+      rel="shortcut icon"
+      href="./assets/logo-trans.png"
+      type="image/x-icon"
+    />
 
-    <section class="discounted-items">
-        <h2>Discounted Items</h2>
-        <!-- Placeholder content and images -->
-        <div class="item">
-            <img src="placeholder_image3.jpg" alt="Discounted Item 1">
-            <h3>Discounted Item 1</h3>
-            <p>$79.99 <span class="original-price">$99.99</span></p>
-        </div>
-        <div class="item">
-            <img src="placeholder_image4.jpg" alt="Discounted Item 2">
-            <h3>Discounted Item 2</h3>
-            <p>$119.99 <span class="original-price">$149.99</span></p>
-        </div>
-    </section>
+    <link rel="stylesheet" href="./style.css" />
 
-    <section class="normal-items">
-        <h2>Normal Items</h2>
-        <!-- Placeholder content and images -->
-        <div class="item">
-            <img src="placeholder_image5.jpg" alt="Normal Item 1">
-            <h3>Normal Item 1</h3>
-            <p>$49.99</p>
-        </div>
-        <div class="item">
-            <img src="placeholder_image6.jpg" alt="Normal Item 2">
-            <h3>Normal Item 2</h3>
-            <p>$69.99</p>
-        </div>
-    </section>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-    <section class="contact-form">
-        <h2>Contact Us</h2>
-        <form action="contact.php" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-    <section class="appointment-form">
-        <h2>Book an Appointment</h2>
-        <form action="appointment.php" method="post">
-            <label for="fullname">Full Name:</label>
-            <input type="text" id="fullname" name="fullname" required>
-            
-            <label for="phone">Phone Number:</label>
-            <input type="text" id="phone" name="phone" required>
-            
-            <label for="date">Preferred Date:</label>
-            <input type="date" id="date" name="date" required>
-            
-            <button type="submit">Book Appointment</button>
-        </form>
-    </section>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-    <section class="checkout-section" style="display:none;">
-        <h2>Checkout</h2>
-        <form action="checkout.php" method="post" id="checkout-form">
-            <label for="shipping-info">Shipping Information:</label>
-            <input type="text" id="shipping-info" name="shipping-info" placeholder="Enter your shipping address" required>
-            
-            <label for="billing-info">Billing Information:</label>
-            <input type="text" id="billing-info" name="billing-info" placeholder="Enter your billing address" required>
-            
-            <label for="payment-method">Payment Method:</label>
-            <select id="payment-method" name="payment-method" required>
-                <option value="">Select Payment Method</option>
-                <option value="credit-card">Credit Card</option>
-                <option value="paypal">PayPal</option>
-            </select>
-            
-            <button type="submit">Proceed to Payment</button>
-        </form>
-    </section>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
 
-    <section class="cart-section" style="display:none;">
-        <h2>Shopping Cart</h2>
-        <ul id="cart-items">
-            
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+
+  <body>
+    <header class="container-fluid d-flex justify-content-space-between">
+      <div class="logo">
+        <a href="./index.html">
+          <img class="logo-img" src="./assets/logo-trans.png" alt=""
+        /></a>
+      </div>
+
+      <nav class="d-flex justify-content-end w-100">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="#">About <i class="fas fa-caret-down"></i></a>
+            <div class="dropdown-content">
+              <a href="./about.html"> About Us</a>
+              <a href="./partners.html"> Our Partners</a>
+              <a href="./safety.html"> Safety Instructions</a>
+            </div>
+          </li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./volunteer.html">Volunteer</a></li>
+          <li class="dropdown">
+            <a href="#">Community Support <i class="fas fa-caret-down"></i></a>
+            <div class="dropdown-content">
+              <a href="./offer-assistance.html">Offer Assistance</a>
+              <a href="./request-assistance.html">Request Assistance </a>
+            </div>
+          </li>
+          <li><a href="./contact.html">Contact Us</a></li>
+          <button class="rounded-3 btn-block donate">
+            <a href="./donate.html" class="text-white">DONATE</a>
+          </button>
         </ul>
-        <button onclick="checkout()">Checkout</button>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <p>Contact us at: contact@qwertytech.com</p>
-            <p>&copy; 2024 QWERT Tech. All rights reserved.</p>
+      </nav>
+    </header>
+    <footer id="#footer">
+        <div class="container-fluid foot-container">
+          <div class="foot-abt">
+            <h3>About ReliefConnect:</h3>
+            <p class="pt-3">
+              ReliefConnect serves as a versatile relief service website, driven
+              by a fundamental mission to accelerate disaster response, offer
+              essential humanitarian assistance, and cultivate a sense of unity
+              within communities. Designed as an inclusive online hub, this
+              platform will play a pivotal role in uniting individuals, relief
+              organizations, and volunteers, all working in tandem to streamline
+              the coordination and equitable distribution of aid when confronted
+              with critical situations
+            </p>
+          </div>
+          <div class="links">
+            <h3>Quick Links:</h3>
+            <ul class="pt-3">
+              <li><a href="#">Home</a></li>
+              <li><a href="./about.html">About Us</a></li>
+              <li><a href="./blog.html">Blogs</a></li>
+              <li><a href="./volunteer.html">Volunteer</a></li>
+              <li><a href="./offer-assistance.html">Community Support</a></li>
+              <li><a href="./contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="newsletter">
+            <h3>Newsletter:</h3>
+            <p class="pt-3">Stay updated with our latest news and promotions.</p>
+            <form>
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                required
+              />
+              <button type="submit" class="subscribe-btn">Subscribe</button>
+            </form>
+            <div class="social-icons my-3">
+              <a href="https://www.facebook.com/"
+                ><i class="fab fa-facebook fa-2x text-dark" title="Facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/">
+                <i class="fab fa-instagram fa-2x text-dark" title="Instagram"></i
+              ></a>
+              <a href="https://twitter.com/?lang=en">
+                <i class="fab fa-twitter fa-2x text-dark" title="Twitter"></i
+              ></a>
+              <a href="https://www.youtube.com/">
+                <i class="fab fa-youtube fa-2x text-dark" title="Youtube"></i
+              ></a>
+              <a href="https://www.google.com/"
+                ><i class="fab fa-google fa-2x text-dark" title="Google"></i
+              ></a>
+            </div>
+          </div>
         </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        <hr />
+        <div class="info-container">
+          <div class="rights">
+            <i class="fas fa-copyright"></i>
+            <span>** ReliefConnect | All Rights Reserved-2023.</span>
+          </div>
+          <div class="policy">
+            <ul class="lists">
+              <li><a class="text-dark" href="#">Terms of service</a></li>
+              <li><a class="text-dark" href="#">Privacy Policy</a></li>
+              <li><a class="text-dark" href="#">General Information</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <button
+        id="scrollToTopBtn"
+        class="btn btn-secondary top-button rounded-5 text-white"
+      >
+        <i class="fas fa-arrow-up"></i>
+      </button>
+      <button
+        type="button"
+        class="btn btn-success rounded-5 toaster"
+        id="liveToastBtn"
+      >
+        <i class="fas fa-bell fa-1x"></i>
+      </button>
+      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div
+          id="liveToast"
+          class="toast"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="toast-header">
+            <img
+              src="./assets/chat-logo.png"
+              class="rounded me-2 w-25 h-25"
+              alt="..."
+            />
+            <strong class="me-auto">Recent Message</strong>
+            <small>10 mins ago</small>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="toast"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="toast-body">Emergency calling..</div>
+        </div>
+      </div>
+    </body>
+  
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./main.js"></script>
+  </html>
