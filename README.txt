@@ -1,1 +1,1 @@
-Creating a Charity Organization Website with real alike features and implementation.
+Relief Connect is the international Charity Organization. Here we have the website for Relief Connect which contains proper Navigation Bar, Header, Footer and so on. We have included Home, About Us, Donate, Blog, etc. pages with different Contact Forms. It is a fully functional website with realistic features necessary for Charity Organization Website.
